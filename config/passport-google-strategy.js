@@ -6,8 +6,8 @@ const crypto = require("crypto");
 passport.use(
   new googleStrategy(
     {
-      clientID: "",
-      clientSecret: "",
+      clientID: "", //paste clientID here
+      clientSecret: "", //paste clientSecret here
       callbackURL: "http://localhost:8000/user/auth/google/callback",
     },
     async function (accessToken, refreshToken, profile, done) {
