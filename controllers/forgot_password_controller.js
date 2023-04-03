@@ -13,6 +13,7 @@ module.exports.create = async function (req, res) {
   try {
     let user = await User.findOne({ email: req.body.email });
     if (user) {
+      req.flash("success", "Mail sent");
       let dt = new Date();
       let token = await ForgotPassword.create({
         user: user._id,
@@ -21,7 +22,6 @@ module.exports.create = async function (req, res) {
         isExpired: false,
       });
       token = await token.populate("user");
-      req.flash("success", "Mail sent");
       forgotPasswordMailer.newToken(token);
       return res.redirect("back");
     } else {
