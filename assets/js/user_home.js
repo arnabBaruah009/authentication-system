@@ -1,7 +1,7 @@
 function signoutFunc() {
-    window.location.href = 'http://localhost:8000/user/signOut';
+  window.location.href = "http://localhost:8000/user/signOut";
 }
 
 function resetFunc() {
-    window.location.href = 'http://localhost:8000/user/reset';
+  window.location.href = "http://localhost:8000/forgot_password/reset";
 }
