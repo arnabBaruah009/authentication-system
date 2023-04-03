@@ -7,7 +7,7 @@ exports.newToken = (token) => {
         subject: "Your link to reset password", //Subject line
         html:   `
                     Copy and paste this link to the URL <br><br>
-                    localhost:8000/forgot_password/${token.accessToken}
+                    localhost:8000/forgot_password/token/${token.accessToken}
                 `, // html body
     }, (err, info) => {
         if(err){
