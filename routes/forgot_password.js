@@ -5,7 +5,7 @@ const forgotPasswordController = require("../controllers/forgot_password_control
 
 router.get("/", forgotPasswordController.home);
 router.post("/create-token", forgotPasswordController.create);
-router.get("/:token", forgotPasswordController.findToken);
+router.get("/token/:token", forgotPasswordController.findToken);
 router.get("/reset", forgotPasswordController.reset);
 router.post("/reset/:id", forgotPasswordController.resetPass);
 
