@@ -2,6 +2,8 @@ const ForgotPassword = require("../models/forgot_password");
 const User = require("../models/user_Schema");
 const crypto = require("crypto");
 const forgotPasswordMailer = require("../mailers/forgot_password_mailer");
+const queue = require("../config/kue");
+const forgotPass_worker = require('../workers/forgotPass_worker');
 
 module.exports.home = function (req, res) {
   return res.render("forgot_password", {
@@ -22,7 +24,14 @@ module.exports.create = async function (req, res) {
         isExpired: false,
       });
       token = await token.populate("user");
-      forgotPasswordMailer.newToken(token);
+      let job = queue.create("emails", token).save(function (err) {
+        if (err) {
+          console.log("Error in enqueing email", err);
+          return;
+        }
+        console.log("Job enqueued", job.id);
+      });
+
       return res.redirect("back");
     } else {
       req.flash("error", "User not found");
