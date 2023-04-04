@@ -1,13 +1,25 @@
 #header-div{
     position: sticky;
     top: 0;
-    height: 30px;
+    height: 40px;
     width: 100%;
-    background-color: #e08a67;
+    background-color: #2f91d2;
     display: flex;
     flex-direction: row-reverse;
 }
 
 #header-div>p{
     margin: 5px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+}
+
+#header-div>p a{
+    text-decoration: none;
+    color: rgb(107, 77, 38);
 }
