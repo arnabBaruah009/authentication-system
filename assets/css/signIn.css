@@ -1,0 +1,15 @@
+body {
+  background: rgb(228, 220, 128);
+  background: linear-gradient(
+    90deg,
+    rgba(228, 220, 128, 1) 0%,
+    rgba(158, 230, 110, 1) 100%
+  );
+}
+
+#container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
