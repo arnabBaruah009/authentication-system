@@ -1,6 +1,10 @@
-<h3>Welcome <%= locals.user.name %></h3>
+<link rel="stylesheet" href="/css/user_home.css" />
 
-<button onclick="signoutFunc()">SIGN OUT</button>
-<button onclick="resetFunc('<%= locals.user.id %>')">Reset Password</button>
+<div class="homeContainer">
+  <h1>Welcome <%= locals.user.name %></h1>
+
+  <button onclick="signoutFunc()">SIGN OUT</button>
+  <button onclick="resetFunc('<%= locals.user.id %>')">Reset Password</button>
+</div>
 
 <script src="/js/user_home.js"></script>

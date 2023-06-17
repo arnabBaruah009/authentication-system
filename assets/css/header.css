@@ -1,25 +1,49 @@
-#header-div{
-    position: sticky;
-    top: 0;
-    height: 40px;
-    width: 100%;
-    background-color: #2f91d2;
-    display: flex;
-    flex-direction: row-reverse;
+#header-div {
+  position: sticky;
+  top: 0;
+  /* height: 40px; */
+  width: 100%;
+  background-color: #2f91d2;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-#header-div>p{
-    margin: 5px;
-    border: 2px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    border-radius: 20px;
-    background-color: antiquewhite;
+.header_btn {
+  cursor: pointer;
+  margin: 0.7em;
+  text-decoration: none;
 }
 
-#header-div>p a{
-    text-decoration: none;
-    color: rgb(107, 77, 38);
+#header-div button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 10px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 16px;
+}
+
+.signOut button svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#header-div button span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  margin-left: 0.2em;
+}
+
+.signOut button:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+#header-div button:hover span {
+  transform: translateX(7px);
 }
